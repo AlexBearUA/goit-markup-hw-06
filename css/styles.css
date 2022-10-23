@@ -785,3 +785,98 @@ img {
   height: 18px;
   fill: currentColor;
 }
+
+/* Form We will call you */
+
+.form {
+  width: 100%;
+  padding: 40px;
+  text-align: center;
+}
+
+.form-title {
+  margin-bottom: 30px;
+  font-weight: 700;
+  font-size: 20px;
+  letter-spacing: 0.03em;
+  line-height: 1.17;
+  color: var(--title-text-color);
+}
+
+.form-field {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+
+.form-field:not(:last-child) {
+  margin-bottom: 28px;
+}
+
+.form-field:last-child {
+  margin-bottom: 20px;
+}
+
+.form-policy {
+  margin-bottom: 30px;
+  display: flex;
+  justify-content: center;
+}
+
+.form-input {
+  height: 40px;
+  border: 1px solid rgba(33, 33, 33, 0.2);
+  border-radius: 4px;
+}
+
+.form-input-text {
+  padding: 12px;
+  border: 1px solid rgba(33, 33, 33, 0.2);
+  border-radius: 4px;
+  resize: none;
+}
+
+.form-label {
+  position: absolute;
+  left: 0;
+  top: -18px;
+
+  font-size: 12px;
+  letter-spacing: 0.01em;
+  line-height: 1.17;
+  color: var(--main-text-color);
+}
+
+.policy-label {
+  letter-spacing: 0.03em;
+  line-height: 1.71;
+  color: var(--main-text-color);
+}
+
+.policy-link {
+  color: var(--accent-color);
+}
+
+.send-data-button {
+  padding: 10px 52px;
+
+  border: 0;
+  border-radius: 4px;
+
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 1.87;
+  letter-spacing: 0.06em;
+  background-color: var(--accent-color);
+  color: var(--main-background-color);
+  cursor: pointer;
+  transition: background-color var(--time) var(--time-func);
+}
+
+.form-input:focus + .form-label {
+  color: var(--accent-color);
+}
+
+.form-input-text:focus + .form-label {
+  color: var(--accent-color);
+}
