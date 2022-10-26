@@ -144,8 +144,8 @@ img {
   background-color: var(--accent-color);
 
   animation-name: current-underline;
-  animation-duration: var(--time);
-  animation-timing-function: var(--time-func);
+  animation-duration: 350ms;
+  animation-timing-function: linear;
 }
 
 @keyframes current-underline {
@@ -699,6 +699,7 @@ img {
 
 .ourprojects-overlay {
   position: absolute;
+
   top: 0;
   left: 0;
   width: 100%;
@@ -708,9 +709,7 @@ img {
 
   transform: translateY(100.1%);
   transition: transform var(--time) var(--time-func);
-}
 
-.ourprojects-overlay-text {
   font-size: 18px;
   line-height: 1.55;
   letter-spacing: 0.03em;
@@ -750,6 +749,9 @@ img {
 
   min-width: 528px;
   min-height: 581px;
+
+  padding: 40px;
+  text-align: center;
 
   transform: translate(-50%, -50%) scale(1);
 
@@ -792,8 +794,6 @@ img {
 
 .form {
   width: 100%;
-  padding: 40px;
-  text-align: center;
 }
 
 .form-title {
@@ -803,6 +803,10 @@ img {
   letter-spacing: 0.03em;
   line-height: 1.17;
   color: var(--title-text-color);
+}
+
+.inputuserdata {
+  margin-bottom: 20px;
 }
 
 .form-field {
@@ -815,23 +819,23 @@ img {
   margin-bottom: 28px;
 }
 
-.form-field:last-child {
-  margin-bottom: 20px;
-}
-
 .form-input {
   height: 40px;
   padding-left: 42px;
   border: 1px solid rgba(33, 33, 33, 0.2);
   border-radius: 4px;
   outline: none;
+  transition: border-color var(--time) var(--time-func);
 }
 
 .input-icon {
   position: absolute;
+  width: 18px;
+  height: 18px;
   left: 21px;
   top: 38px;
   transform: translate(-50%, -50%);
+  transition: fill var(--time) var(--time-func);
 }
 
 .form-input-text {
@@ -840,6 +844,7 @@ img {
   border-radius: 4px;
   resize: none;
   outline: none;
+  transition: border-color var(--time) var(--time-func);
 }
 
 .form-label {
@@ -852,25 +857,64 @@ img {
   color: var(--main-text-color);
 }
 
+.form-field:focus-within > .form-input,
+.form-field:focus-within > .form-input-text,
 .form-field:focus-within > .input-icon {
+  border-color: var(--accent-color);
   fill: var(--accent-color);
 }
 
-.form-field:focus-within > .form-input,
-.form-field:focus-within > .form-input-text {
-  border-color: var(--accent-color);
-}
-
 .form-policy {
-  margin-bottom: 30px;
   display: flex;
   justify-content: center;
-}
-
-.policy-label {
+  align-items: center;
+  margin-bottom: 30px;
   letter-spacing: 0.03em;
   line-height: 1.71;
   color: var(--main-text-color);
+  border: 1px solid transparent;
+
+  border-radius: 4px;
+  transition: border-color var(--time) var(--time-func);
+}
+
+.checkbox-input {
+  position: absolute;
+  white-space: nowrap;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  border: 0;
+  padding: 0;
+  clip: rect(0 0 0 0);
+  clip-path: inset(50%);
+  margin: -1px;
+}
+
+.checkbox-field {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 16px;
+  height: 15px;
+  margin-right: 8px;
+  border-radius: 2px;
+  border: 2px solid #212121;
+}
+
+.form-policy:focus-within {
+  border-color: var(--accent-color);
+}
+
+.checkbox-icon {
+  width: 16px;
+  height: 15px;
+  fill: #ffffff;
+}
+
+.checkbox-input:checked + .checkbox-field {
+  border: none;
+  background-color: var(--accent-color);
 }
 
 .policy-link {
