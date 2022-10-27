@@ -965,10 +965,6 @@ img {
   letter-spacing: 0.03em;
   line-height: 1.71;
   color: var(--main-text-color);
-  border: 1px solid transparent;
-
-  border-radius: 4px;
-  transition: border-color var(--time) var(--time-func);
 }
 
 .policy-border {
