@@ -997,6 +997,7 @@ img {
 
 .policy-link {
   color: var(--accent-color);
+  z-index: 1;
 }
 
 .policy-link:focus {
