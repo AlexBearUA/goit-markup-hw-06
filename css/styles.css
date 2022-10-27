@@ -819,7 +819,6 @@ img {
   min-height: 581px;
 
   padding: 40px;
-  text-align: center;
 
   transform: translate(-50%, -50%) scale(1);
 
@@ -865,7 +864,8 @@ img {
 }
 
 .form-title {
-  margin-bottom: 30px;
+  text-align: center;
+  margin-bottom: 12px;
   font-weight: 700;
   font-size: 20px;
   letter-spacing: 0.03em;
@@ -878,17 +878,17 @@ img {
 }
 
 .form-field {
-  position: relative;
   display: flex;
   flex-direction: column;
 }
 
 .form-field:not(:last-child) {
-  margin-bottom: 28px;
+  margin-bottom: 10px;
 }
 
 .form-input {
   height: 40px;
+  width: 100%;
   padding-left: 42px;
   border: 1px solid rgba(33, 33, 33, 0.2);
   border-radius: 4px;
@@ -896,12 +896,16 @@ img {
   transition: border-color var(--time) var(--time-func);
 }
 
+.input-icon-position {
+  position: relative;
+}
+
 .input-icon {
   position: absolute;
   width: 18px;
   height: 18px;
+  top: 50%;
   left: 21px;
-  top: 38px;
   transform: translate(-50%, -50%);
   transition: fill var(--time) var(--time-func);
 }
@@ -917,7 +921,6 @@ img {
 
 .form-label {
   margin-bottom: 4px;
-  margin-right: auto;
 
   font-size: 12px;
   letter-spacing: 0.01em;
@@ -925,9 +928,9 @@ img {
   color: var(--main-text-color);
 }
 
-.form-field:focus-within > .form-input,
-.form-field:focus-within > .form-input-text,
-.form-field:focus-within > .input-icon {
+.form-field:focus-within .form-input,
+.form-field:focus-within .form-input-text,
+.form-field:focus-within .input-icon {
   border-color: var(--accent-color);
   fill: var(--accent-color);
 }
@@ -976,8 +979,12 @@ img {
   transition: border-color var(--time) var(--time-func);
 }
 
-.form-policy:focus-within .policy-border {
+.checkbox-input:focus ~ .policy-border {
   border-color: var(--accent-color);
+}
+
+.checkbox-input:checked ~ .policy-border {
+  border-color: transparent;
 }
 
 .checkbox-icon {
@@ -991,10 +998,6 @@ img {
   background-color: var(--accent-color);
 }
 
-.checkbox-input:checked ~ .policy-border {
-  border-color: transparent;
-}
-
 .policy-link {
   color: var(--accent-color);
   z-index: 1;
@@ -1005,7 +1008,9 @@ img {
 }
 
 .send-data-button {
+  display: block;
   padding: 10px 52px;
+  margin: 0 auto;
 
   border: 0;
   border-radius: 4px;
